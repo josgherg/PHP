@@ -1,0 +1,102 @@
+CREATE DATABASE rsocial;
+
+USE rsocial;
+
+CREATE TABLE usuarios (
+    id INT AUTO_INCREMENT PRIMARY KEY, 
+    nombre_usuario VARCHAR(100),
+    correo_electronico VARCHAR(100), 
+    contrasena VARCHAR(100), 
+    rol VARCHAR (7), 
+    fecha_creacion TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+	fecha_actualizacion TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+);
+CREATE TABLE publicaciones(
+    id INT AUTO_INCREMENT PRIMARY KEY, 
+    id_usuario INT ,
+    contenido VARCHAR(1000),
+    fecha_creacion TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+	fecha_actualizacion TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+    FOREIGN KEY (id_usuario) REFERENCES usuarios(id)
+);
+CREATE TABLE comentarios(
+    id INT AUTO_INCREMENT PRIMARY KEY, 
+    id_publicacion INT,
+    id_usuario INT,
+    contenido VARCHAR(1000),
+    fecha_creacion TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+	fecha_actualizacion TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+    FOREIGN KEY (id_publicacion) REFERENCES publicaciones(id),
+    FOREIGN KEY (id_usuario) REFERENCES usuarios(id)
+);
+
+CREATE TABLE recuperaciones(
+    id INT AUTO_INCREMENT PRIMARY KEY, 
+    id_usuario INT,
+    codigo VARCHAR(6),
+    fecha_creacion TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+	fecha_actualizacion TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+    FOREIGN KEY (id_usuario) REFERENCES usuarios(id)
+);
+
+CREATE TABLE fotos(
+    id INT AUTO_INCREMENT PRIMARY KEY, 
+    id_usuario INT,
+    enlace VARCHAR(556),
+    fecha_creacion TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+	fecha_actualizacion TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+    FOREIGN KEY (id_usuario) REFERENCES usuarios(id)
+);
+SELECT usuarios.nombre_usuario, usuarios.correo_electronico, usuarios.rol, usuarios.fecha_creacion, fotos.enlace 
+FROM usuarios
+LEFT JOIN fotos ON fotos.id_usuario =usuarios.id 
+WHERE usuarios.id=?;
+
+SELECT usuarios.id, usuarios.nombre_usuario, usuarios.correo_electronico, usuarios.rol, usuarios.fecha_creacion, fotos.enlace, publicaciones.id, publicaciones.contenido, publicaciones.fecha_creacion 
+FROM usuarios
+LEFT JOIN fotos ON fotos.id_usuario = usuarios.id
+LEFT JOIN publicaciones ON publicaciones.id_usuario = usuarios.id
+WHERE usuarios.id = ?;
+
+SELECT  publicaciones.id, publicaciones.fecha_creacion, publicaciones.contenido, usuarios.nombre_usuario, fotos.enlace
+FROM publicaciones
+LEFT JOIN usuarios ON publicaciones.id_usuario = usuarios.id
+LEFT JOIN fotos ON publicaciones.id_usuario = fotos.id
+WHERE usuarios.id = ?;
+
+SELECT comentarios.id, comentarios.contenido, comentarios.fecha_creacion, usuarios.nombre_usuario, fotos.enlace, publicaciones.id
+FROM comentarios 
+LEFT JOIN usuarios ON comentarios.id_usuario = usuarios.id
+LEFT JOIN fotos ON comentarios.id_usuario = fotos.id
+LEFT JOIN publicaciones ON publicaciones.id = comentarios.id_publicacion
+WHERE publicaciones.id = ?;
+
+SELECT publicaciones.id, publicaciones.id_usuario, publicaciones.contenido, comentarios.id, comentarios.id_publicacion, comentarios.id_usuario, comentarios.contenido, comentarios.fecha_creacion, usuarios.nombre_usuario, usuarios.id
+FROM publicaciones
+LEFT JOIN comentarios  ON publicaciones.id= comentarios.id_publicacion
+LEFT JOIN usuarios ON publicaciones.id_usuario = usuarios.id
+WHERE comentarios.id_usuario = ?
+ORDER BY usuarios.id;
+
+
+----Pruebas
+INSERT INTO comentarios (id_publicacion, id_usuario, contenido) values(3, 3,"Dijo su primer agugugaga! (=");
+INSERT INTO comentarios (id_publicacion, id_usuario, contenido) values(4, 1,"Si, yo pienso lo mismo!");
+INSERT INTO comentarios (id_publicacion, id_usuario, contenido) values(1, 3,"Yo quiero probarla. Se oye interesante");
+INSERT INTO publicaciones (id_usuario, contenido) values(3,"Que bonito día!");
+INSERT INTO publicaciones (id_usuario, contenido) values(2,"ahgugugaga");
+INSERT INTO publicaciones (id_usuario, contenido) values(1,"La autoaceptacion no es mas importante que el logro personal, ni visceversa. Los dos van de la mano.");
+INSERT INTO publicaciones  (id_usuario, contenido) values(1,"Estoy creando una nueva red social la cual pondré en prueba pront. ¿Quien quiere probarla?");
+
+
+
+
+
+            
+
+
+
+
+
+
+

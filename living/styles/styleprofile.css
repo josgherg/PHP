@@ -1,0 +1,883 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; 
+    text-decoration: none;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.material-symbols-sharp{
+  font-variation-settings:
+  'FILL' 1,
+  'wght' 700,
+  'GRAD' 200,
+  'opsz' 48
+}
+
+/*---------------------------------------*/
+.general{
+  background-color: rgba(43, 53, 69,0.5);
+}
+
+#navbar{
+  background-color: #2b3545;
+  height: 100px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  position: fixed;
+  z-index: 100;
+
+}
+#logoNav{
+  height: 100px;
+  width: 20%;
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  padding: 0 10px 0 10px;
+  position: relative;
+}
+
+#logo{
+  height: 50px;
+  width: 50px;
+  position: absolute;
+  left: 40px;
+  top: 0px;
+}
+
+#slogan{
+  width: 100px;
+  position: absolute;
+  left: 20px;
+  top: 48px;
+}
+
+/*--------------------------*/
+#searchNav{
+  font-size: 20px;
+  font-weight: bolder;
+  height: 100px;
+  width: 60%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 10px 0 10px;
+}
+
+#searchNav a:visited{
+  color: #d7cff6;
+}
+
+#form_buscar{
+  width: 40%;
+  height: 60px;
+  position: relative;
+}
+
+#input_buscar{
+  width: 100%;
+  height: 100%;
+  border-color: rgb(219, 218, 224);
+  background-color: rgb(219, 218, 224);
+  outline: none;
+  border-radius: 10px;
+  padding-left: 10px;
+  font-size: 20px;
+}
+
+#searchBtn{
+  width: 50px;
+  height: 100%;
+  position: absolute;
+  right: 0px;
+  border: none;
+  background-color: #dbdae0;
+  
+  border-radius: 10px;
+}
+
+#searchBtn:active{
+  box-shadow: 0px 0px 0px;
+  background-color: rgb(219, 218, 224);
+  color:#2b3545;
+  box-shadow: -5px 0px 10px #2b3545;
+}
+
+/*----------------------------------*/
+#profileNav{
+  height: 100px;
+  width: 20%;
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  padding-right: 10px;
+}
+.onWall{
+  border: solid 1px rgb(219, 218, 224);
+  width: 27px;
+  height: 27px;
+  color: #d7cff6;
+  border-radius:  50%;
+  margin: 0 20px 0 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.onWall:hover{
+  cursor: pointer;
+}
+
+/*----------------------------------------------------------------------------------------------*/
+
+#idcreatepublication{
+  background-color: transparent;
+}
+.btncrtpbl{
+  border: solid 1px rgb(219, 218, 224);
+  border-radius:  50%;
+  width: 27px;
+  height: 27px;
+  background-color: transparent;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #d7cff6;
+}
+.btncrtpbl:hover{
+  cursor: pointer;
+}
+
+#notif{
+  margin-right: 170px;
+}
+
+#profileimg{
+  width: 80px;
+  height: 80px;
+  position: absolute;
+  right: 40px;
+  top: 20px;
+  border: none;
+  background-color: #dbdae0;
+  box-shadow: -5px 5px 10px #2b3545;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+#img-profile{
+  width: 95%;
+  height: 95%;
+  border-radius: 10px;
+}
+
+/*----------------------------------*/
+/*----------------------------------*/
+#menu{
+  position: fixed;
+  z-index: 100;
+  top: 110px;
+  left: 0px;
+  width: 250px;
+  height: 80px;
+  padding: 10px 10px 10px 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  opacity: 0.3;  
+}
+#menu:hover {
+  opacity: 1;
+}
+
+#menu li{ 
+  width: 100px;
+  height: 60px;
+  border-radius: 65px;
+  font-size: 20px;
+  color: #2b3545;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#menu li:hover{
+  background-color: #dbdae0;
+  color: #2b3545;
+  cursor: pointer;
+}
+#menu li:active{
+  background-color: #2b3545;
+  color: #dbdae0;
+}
+
+#menu a{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 70%;
+  color: #2b3545;
+}
+#menu li:active a{
+  color: #dbdae0;
+}
+
+#endsession{
+  position: fixed;
+  z-index: 100;
+  top: 110px;
+  right: 0px;
+  width: 120px;
+  height: 80px;
+  padding: 10px;
+  opacity: 0.3; 
+}
+#endsession:hover{
+  opacity: 1;
+}
+
+#btnlgt{
+  width: 100px;
+  height: 60px;
+  border-radius: 65px;
+  color: #2b3545;
+  font-size: 20px;background-color: transparent;
+  border:none;
+}
+#btnlgt:hover{
+  background-color: #dbdae0;
+  color: #2b3545;
+  cursor: pointer;
+}
+#btnlgt:active{
+  background-color: #2b3545;
+  color: #dbdae0;
+  
+}
+
+
+/*---------------------------------------------*/
+#container{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  
+}
+
+#configuration{
+  width: 20%;
+  height: 100%;
+  padding-top: 200px;
+  position: relative;
+  
+}
+main{
+  padding-top: 100px;
+  height: 100%;
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+  color: #dbd4f7;
+  
+}
+
+#greetings{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 99%;
+  height: 100px;
+  border-bottom:solid 1px;
+  border-color: #2b3545;
+  position: absolute;
+  top: 100px;
+  left: 0px;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+ #greetings p{
+  color:#2b3545;
+  font-size: 25px;
+}
+#optionlist{
+  padding-left: 10px;
+}
+#titleconf{
+  height: 60px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 24px;
+  
+}
+.optionconf{
+  height: 60px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #2b3545;
+  font-size: 18px;
+}
+.optionconf:hover{
+  background-color: #dbdae0;
+  border-radius: 30px;
+
+}
+.optionconf:active{
+  background-color: #2b3545;
+  
+}
+ 
+.optionconf:active a{
+  color: #dbdae0;;
+  
+}
+
+.optionconf:visited{
+  color: #2b3545;
+}
+
+.optionconf a{
+  color: #2b3545;
+}
+
+
+/*----------------*/
+#board{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: start;  
+  margin-top: 100px;
+  overflow-y: auto;
+}
+
+#publication{
+  border-radius: 10px;
+  width: 80%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 10px;
+  box-shadow: -5px 5px 10px #2b3545;
+}
+
+#descrpub{
+  display: flex;
+  width: 100%;
+  height: 50px;
+  border-radius: 10px 10px 0 0;
+  border-color:  #dbd4f7;
+  background-color: #2b3545;
+}
+#phptxt{
+  width: 80%;
+  height: 100%;
+  display:flex;
+  justify-content: start;
+  align-items: center;
+}
+
+#descrpub span{
+  width:50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50px;
+}
+
+#imgpub{
+  width: 50px;
+  height: 50px;
+  border-radius: 10px 0 0 0;
+}
+
+#nmbpub{
+ margin-left: 20px;
+}
+#contPrincipal{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; 
+  height: 150px;
+  width: 100%;
+  border: none;
+  resize: none;
+  outline: none;
+  font-size: 20px;
+  background-color: transparent;
+}
+#contenidopub{
+  color: #2b3545;
+  background-color: #dbdae0;
+  height: 120px;
+  width: 100%;
+  border-radius:  0 0 10px 10px;
+  padding: 5px 10px 5px  10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; 
+  
+  position: relative;
+  
+}
+#contdate{
+  width: 100%;
+  height: 20px;
+  text-align: end;
+  font-size: 10px;
+}
+.icons{
+  width: 20%;
+  display:flex;
+  justify-content: end;
+}
+#commentForm{
+  background-color: transparent;
+}
+.btnpbldlt{
+  background-color: transparent;
+  color:#C79A12;
+  border:  none;
+  
+}
+.btnpbldlt:hover{
+  color:#dbd4f7;
+  cursor: pointer;
+}
+.btnpbledt{
+  background-color: transparent;
+  color:#C79A12;
+  border:  none;
+  position: absolute;
+  top: -37px;
+  right: 55px;
+  
+}
+.btnpbledt:hover{
+  color:#dbd4f7;
+  cursor: pointer;
+}
+.btnpblcmt{
+  background-color: transparent;
+  color:#C79A12;
+  border:  none;
+  
+}
+.btnpblcmt:hover{
+  color:#dbd4f7;
+  cursor: pointer;
+}
+
+.btnpbl{
+  background-color: transparent;
+  color:#C79A12;
+  border:  none;
+  
+}
+.btnpbl:hover{
+  color:#dbd4f7;
+  cursor: pointer;
+}
+
+
+/*-----------------------------------------------------------*/
+#comments{
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+  justify-content: start;
+  
+}
+
+#comment{
+  width: 75%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  
+}
+
+#descrcomm{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 40px;
+  border-radius: 10px 10px 0 0;
+  border-color:  #dbd4f7;
+  background-color: #2b3545;
+  
+}
+
+#phptxtcomm{
+  width: 80%;
+  height: 100%;
+  display:flex;
+  justify-content: start;
+  align-items: center;
+}
+
+#descrcomm span{
+  width:40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50px;
+}
+
+#imgcomm{
+  width: 40px;
+  height: 40px;
+  border-radius: 10px 0 0 0;
+}
+
+#nmbcomm{
+ margin-left: 20px;
+}
+
+#commprincipal{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; 
+  height: 100px;
+  width: 100%;
+}
+
+#contenidocomm{
+  color: #2b3545;
+  background-color: #dbdae0;
+  border-radius:  0 0 10px 10px;
+  padding: 5px 10px 5px  10px;
+  height: 100px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; 
+  box-shadow: -5px 5px 10px #2b3545;
+  position: relative;
+  
+}
+#commdate{
+  width: 100%;
+  height: 15px;
+  text-align: end;
+  font-size: 10px;
+}
+#replyForm{
+
+  background-color: transparent;
+}
+.btncmmts{
+  background-color: transparent;
+  color:#C79A12;
+  border:  none;
+}
+.btncmmts:hover{
+  color:#dbd4f7;
+  cursor: pointer;
+}
+
+.btncommedt{
+  background-color: transparent;
+  color:#C79A12;
+  border:  none;
+  position: absolute;
+  top: -32px;
+  right: 50px;
+  
+}
+.btncommedt:hover{
+  color:#dbd4f7;
+  cursor: pointer;
+}
+
+.btncommdlt{
+  background-color: transparent;
+  color:#C79A12;
+  border:  none;
+  
+}
+.btncommdlt:hover{
+  color:#dbd4f7;
+  cursor: pointer;
+}
+
+
+/*------------------------------------*/
+#user{
+  border-radius: 10px;
+  width: 80%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: -5px 5px 10px #2b3545;  
+}
+
+#descruser{
+  display: flex;
+  width: 100%;
+  height: 50px;
+  border-radius: 10px 10px 0 0;
+  border-color:  #dbd4f7;
+  background-color: #2b3545;
+}
+
+#phpusertxt{
+  width: 80%;
+  height: 100%;
+  display:flex;
+  justify-content: start;
+  align-items: center;
+}
+
+#descruser span{
+  width:50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50px;
+}
+
+#imguser{
+  width: 50px;
+  height: 50px;
+  border-radius: 10px 0 0 0;
+}
+
+#nmbuser{
+ margin-left: 20px;
+}
+
+#contPuser{
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; 
+  height: 150px;
+  width: 100%;
+  border-radius: 0 0 10px 10px;
+}
+
+.icons{
+  width: 20%;
+  display:flex;
+  justify-content: end;
+}
+
+#contPuser{
+  width: 100%;
+  height: 100%;
+  background-color: transparent;
+  border: none;
+  resize: none;
+  outline: none;
+  padding: 10px;
+  font-size: 20px;
+  height: 150px;
+  width: 100%;
+  border-radius: 0 0 10px 10px;
+}
+
+#deluserForm{
+  background-color: #2b3545;
+  border-radius: 10px;
+  position: relative;
+}
+.btnuserdlt{
+  background-color: transparent;
+  color:#C79A12;
+  border:  none;
+  
+}
+.btnuserdlt:hover{
+  color:#dbd4f7;
+  cursor: pointer;
+}
+
+
+
+/*------------------------------------*/
+#personalInfo{
+  width: 100%;
+  height: auto;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: start;  
+}
+#personalInfo p{
+  color: #2b3545;
+  font-size: 20px;
+  margin: 10px 0 10px 0;
+}
+#personalInfo label{
+  color: #2b3545;
+  font-size: 20px;
+  margin: 10px 0 10px 0;
+}
+
+#personalInfo input{
+    width: 70%;
+    height: 40px;
+    background-color: rgb(219, 218, 224);
+    border-color: #9499a1;
+    outline: none;
+    border-radius: 10px;
+    padding-left: 10px;
+    font-size: 20px;
+  }
+
+#photuser{
+  width: 180px;
+  height: 180px;
+  display:flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+  
+}
+#imginfo{
+  width: 140px;
+  height: 140px;
+  border-radius: 10px;
+  border:solid 2px #dbd4f7;
+  margin-bottom: 5px;
+}
+#photuser a{
+  opacity: 0.3;
+  padding: 5px; 
+  font-size: 20px;
+}
+
+#photuser a:hover{
+  opacity: 1;
+  background-color: #dbdae0;
+  color: #2b3545;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+#photuser a:active{
+  background-color: #2b3545;
+  color: #dbdae0;
+}
+a:visited{
+  color: #2b3545;
+}
+
+#personalInfo form{
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  
+}
+#butonarea{
+  width: 70%;
+  display: flex;
+  justify-content: end;
+}
+.btn{
+  width: 100px;
+  height: 50px;
+  background-color: transparent;
+  border-radius: 25px;
+  border-color: transparent;
+  opacity: 0.3;
+}
+.btn:hover{
+  opacity: 1;
+  background-color: #dbdae0;
+  color: #2b3545;
+  cursor: pointer;
+}
+
+.btn:active{
+  background-color: #2b3545;
+  color: #dbdae0;
+}
+
+#personalInfo #msg{
+  font-size: 20px;
+  margin-bottom: 5px 0 5px 0;
+  color: red;
+}
+
+#delaccountbtn{
+  background-color: red;
+  color: black;
+  width: 100px;
+  height: 50px;
+  border-radius: 25px;
+  opacity: 0.3;
+  border: none;
+}
+
+#delaccountbtn:hover{
+  opacity: 1;
+}
+
+#delaccountbtn:active{
+  background-color: #2b3545;
+  color: #dbdae0;
+}
+
+.title{
+  color: #2b3545;
+  font-size: 20px;
+  margin: 10px 0 10px 0;
+}
+
+
+
+/*---------------------------------------------*/
+footer{
+  width: 100%;
+  height: 30px;
+  padding-left: 10px;
+  position: absolute;
+  bottom:0px;
+}
+
+#footerInner{
+  width: 100%;
+  height: 100%;
+}
+#footerInner p{
+  font-size: 15px;
+  color:#1f2937;
+}
+
+#footerInner span{
+  font-Family: 'Black Ops One';
+  margin-left: 3px;
+  font-size: 17px;
+} 
+
+#j{
+  color: rgb(52,123,219);
+}
+
+#h{
+  color: rgb(234, 88, 12);
+}
