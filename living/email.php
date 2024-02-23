@@ -8,8 +8,8 @@ function welcomeEmail($mailTo, $name){
     $mail->IsSMTP();
     $mail->Host = "smtp.gmail.com";
     $mail->SMTPAuth = true;
-    $mail->Username = "herr100j@gmail.com";
-    $mail->Password = "ogbe igch jcpl hdpq";
+    $mail->Username = "";
+    $mail->Password = "";
     $mail->SMTPSecure = "tls";
     $mail->Port = 587;
     $mail->AddAddress($mailTo);
@@ -34,8 +34,8 @@ function recoveryEmail($mailTo, $name, $code){
     $mail->IsSMTP();
     $mail->Host = "smtp.gmail.com";
     $mail->SMTPAuth = true;
-    $mail->Username = "herr100j@gmail.com";
-    $mail->Password = "ogbe igch jcpl hdpq";
+    $mail->Username = "";
+    $mail->Password = "";
     $mail->SMTPSecure = "tls";
     $mail->Port = 587;
     $mail->AddAddress($mailTo);
